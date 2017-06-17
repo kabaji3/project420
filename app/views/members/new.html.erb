@@ -1,0 +1,13 @@
+<div class='member'>
+<%= form_for @member do |f| %>
+<fieldset class="member-field">
+<legend>作業員の名前登録</legend>
+
+    <%= f.label :name, "名前" %>
+    <%= f.text_field :name, autofocus: true, class: "form-registration", placeholder: "作業員の名前" %>
+
+  <%= f.submit class: 'login-submit', value: "作業員の登録" %>
+
+<% end %>
+  </fieldset>
+  </div>

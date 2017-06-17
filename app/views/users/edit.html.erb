@@ -1,0 +1,10 @@
+<%= form_for current_user do |f| %>
+<div class="field">
+    <%= f.label :company_name, "会社名" %>
+    <%= f.text_field :company_name %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "会社名を編集する" %>
+  </div>
+<% end %>

@@ -1,0 +1,13 @@
+<div class='location'>
+<%= form_for @location do |f| %>
+<fieldset class="location-field">
+<legend>作業所（現場）の名前登録</legend>
+
+    <%= f.label :workplace, "作業所の名前" %>
+    <%= f.text_field :workplace, autofocus: true, class: "form-registration", placeholder: "作業所の名前" %>
+
+  <%= f.submit class: 'login-submit', value: "作業所の登録" %>
+
+<% end %>
+  </fieldset>
+  </div>

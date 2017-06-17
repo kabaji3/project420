@@ -1,0 +1,43 @@
+<% if user_signed_in? %>
+<div class="nohero">
+  <header>
+    <div class="container">
+        <div class="container-small">
+            <a href="index.html" class="headA">現場配置</a>
+
+            <button type="button" class="headC">
+                <span class="fa fa-bars" title="MENU"></span>
+            </button>
+        </div>
+
+        <nav class="headB">
+            <ul>
+            <% if user_signed_in? %>
+                <li><a href="/users/<%= current_user.id %>">マイページ</a></li>
+                <li><%= link_to "会社名の編集", edit_user_path(current_user) %></li>
+                <li><a href="/members">作業員の一覧</a></li>
+                <li><%= link_to "作業員を追加", new_member_path(current_user) %></li>
+                <li><a href="/locations">作業場所の一覧</a></li>
+                <li><%= link_to "作業場所を追加", new_location_path(current_user) %></li>
+                <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+            <% else %>
+                <%= link_to "新規登録", new_user_registration_path %>
+                <%= link_to "ログイン", new_user_session_path %>
+            <% end %>
+            </ul>
+        </nav>
+    </div>
+  </header>
+</div>
+
+<% end %>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,75 @@
+@charset "UTF-8";
+
+
+.appositive-list {
+  background: #ccc;
+}
+
+.appositive-list ul:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.appositive-list ul li {
+  list-style-type: none;
+  display: block;
+  float: left;
+  margin-bottom: 1.5%;
+  height: 50px;/* 見た目の調整 */
+  line-height: 50px;/* 見た目の調整 */
+  background: #0cc;/* 見た目の調整 */
+  text-align: center;/* 見た目の調整 */
+}
+
+/* 横並びに6等分 */
+.appositive-list ul.al-6 li {
+  width: 14.25%;
+  margin-right: 2.3%;
+}
+.appositive-list ul.al-6 li:nth-child(6n) {
+  margin-right: 0;
+}
+
+/*===== 作業員名・現場名のデザイン  =====*/
+section p {
+  text-align: center;
+}
+
+
+
+/*===== 現場配置  =====*/
+.work-place {
+  background: #ffc0cb;
+}
+
+.work-place ul:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.work-place ul li {
+  list-style-type: none;
+  display: block;
+  float: left;
+  margin-bottom: 1.5%;
+  height: 50px;/* 見た目の調整 */
+  line-height: 50px;/* 見た目の調整 */
+  background: #00ff7f;/* 見た目の調整 */
+  text-align: center;/* 見た目の調整 */
+}
+
+/* 横並びに6等分 */
+.work-place ul.al-6 li {
+  width: 14.25%;
+  margin-right: 2.3%;
+}
+.work-place ul.al-6 li:nth-child(6n) {
+  margin-right: 0;
+}
+
+
+.working-day {
+  text-align: center;
+}

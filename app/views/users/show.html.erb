@@ -1,0 +1,26 @@
+<section id="list">
+    <p><%= @nickname %>さんの作業員一覧</p>
+
+    <div class="appositive-list">
+      <ul class="al-6 sortable">
+        <li id="worker-10000" class="stop"></li>
+        <% @names.each do |member| %>
+        <li id="row_<%= member.id %>"><%= member.name %></li>
+        <% end %>
+      </ul>
+    </div>
+  </section>
+
+  <% @workplaces.each do |location| %>
+  <section id="sort1">
+  <p><%= location.workplace %></p>
+    <div class="work-place">
+      <ul class="al-6 place-1">
+        <li id="worker-1000" class="stop"></li>
+      </ul>
+    </div>
+  </section>
+  <% end %>
+
+
+

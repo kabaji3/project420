@@ -1,0 +1,178 @@
+
+
+/*  http://www.acky.info/tips/css/00020.html  */
+
+@charset "UTF-8";
+
+/*フォントの種類やサイズを指定します*/
+html {
+  font-family: Helvetica, Arial,"Meiryo","メイリオ","ヒラギノ角ゴ Pro w3","Hiragino Kaku Gothic Pro,osaka","ＭＳ Ｐゴシック",sans-serif;
+  color: #475355;
+  font-size: 16px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+body {
+  min-width: 1100px;
+  margin: 0;
+}
+
+/*タブレットサイズになったときの最大サイズを指定しています*/
+@media (max-width: 1024px) {
+  body {
+    min-width: 100%;
+  }
+}
+
+/*見出しタグの指定をしています*/
+h1, h2, h3, h4, h5, h6 {
+  line-height: 2;  /* html内で、font-size16px: line-height32px=余白8px+16px+余白8px */
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+/*タブレットサイズ・スマホサイズになったときの見出しタグの行間の指定をしています*/
+@media (max-width: 1024px) {
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.6;
+  }
+}
+@media (max-width: 740px) {
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.4;
+  }
+}
+
+/*テキストを使うタグの指定です*/
+p,
+li,
+dl,
+table {
+  line-break: strict;
+  word-break: break-strict;
+  word-wrap: break-word;
+  line-height: 2;
+  font-size: 16px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+small {
+  font-size: 12px;
+}
+
+@media (max-width: 1024px) {
+  p,
+  li,
+  dl,
+  table {
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 740px) {
+  p,
+  li,
+  dl,
+  table {
+    line-height: 1.5;
+  }
+}
+
+/*テーブルの中での改行の指定をしています*/
+tr {
+  word-break: break-all;
+}
+/*折り返し禁止のクラスです*/
+.nw {
+  white-space: nowrap;
+}
+
+/*画像と画像のあいだの余白を消します*/
+img {
+  vertical-align: bottom;
+  max-width: 100%;
+}
+
+/*ドラッグして選択したときの文字色と文字の背景色です*/
+::selection {
+  background: #7cc6cf;
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background: #7cc6cf;
+  color: #ffffff;
+}
+
+/*リンクの文字とスタイルをしています*/
+a {
+  background: transparent;
+  text-decoration: none;
+  color: #2a3297;
+  transition: 0.3s;
+}
+
+a:focus{
+  outline:none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/*afterまたはoverflowを使ってクリアするクラスです*/
+/* --after型-- */
+.cfx:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* --overflow型-- */
+.cfxo {
+  overflow: hidden;
+}
+
+/*リストタグのスタイルを消します*/
+ul,
+.li_none {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+dd {
+  margin-left: 0;
+}
+
+/*リストタグのスタイルを戻します*/
+.ul{
+  list-style-type: disc;
+  margin: 1em 0;
+  padding-left: 40px;
+}
+
+/*フォームのための指定です*/
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical;
+}
+
+select option {
+  padding: 0px 5px;
+}
+
+form label {
+  cursor: pointer;
+}
+
+input:placeholder {
+  color: #999;
+}
+
+input:-ms-input-placeholder {
+  color: #999;
+}

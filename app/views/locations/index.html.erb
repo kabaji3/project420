@@ -1,0 +1,7 @@
+<div class="contents row" >
+  <% @locations.each do |location| %>
+    <% if user_signed_in? && current_user.id == location.user_id %>
+      <p><%= location.workplace %><%= link_to '削除', "/locations/#{location.id}", method: :delete %></p>
+    <% end %>
+  <% end %>
+</div>
