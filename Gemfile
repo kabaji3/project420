@@ -51,4 +51,6 @@ end
   gem 'font-awesome-rails'
   gem 'jquery-ui-rails'
   gem 'js_cookie_rails'
+  gem 'rb-readline'
+  gem 'dotenv-rails'
 

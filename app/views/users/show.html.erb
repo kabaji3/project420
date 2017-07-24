@@ -1,5 +1,5 @@
 <section id="list">
-    <p><%= @nickname %>さんの作業員一覧です</p>
+    <p><%= @nickname %>の作業員一覧です</p>
 
     <div class="appositive-list">
       <ul class="al-6 sortable">
@@ -15,7 +15,7 @@
   <section id="sort1">
   <p><%= location.workplace %></p>
     <div class="work-place">
-      <ul class="al-6 place-1">
+      <ul class="al-6 place-1" id="<%= location.id %>">
         <li id="worker-1000" class="stop"></li>
       </ul>
     </div>

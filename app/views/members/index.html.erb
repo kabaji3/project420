@@ -1,7 +1,25 @@
-<div class="contents row" >
-  <% @members.each do |member| %>
-    <% if user_signed_in? && current_user.id == member.user_id %>
-      <p><%= member.name %><%= link_to '削除', "/members/#{member.id}", method: :delete %></p>
-    <% end %>
-  <% end %>
-</div>
+<section class="workplace-list">
+<div class="container">
+  <table>
+    <caption>作業員の一覧</caption>
+    <thead>
+      <tr>
+        <th>作業員名</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @members.each do |member| %>
+        <% if user_signed_in? && current_user.id == member.user_id %>
+          <tr>
+            <td><%= member.name %></td>
+            <td><%= link_to '削除', "/members/#{member.id}", method: :delete %></td>
+            <td>編集ボタン</td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+  </div>
+</section>

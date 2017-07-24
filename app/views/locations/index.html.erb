@@ -1,7 +1,25 @@
-<div class="contents row" >
-  <% @locations.each do |location| %>
-    <% if user_signed_in? && current_user.id == location.user_id %>
-      <p><%= location.workplace %><%= link_to '削除', "/locations/#{location.id}", method: :delete %></p>
-    <% end %>
-  <% end %>
-</div>
+<section class="workplace-list">
+<div class="container">
+  <table>
+    <caption>作業場所の一覧</caption>
+    <thead>
+      <tr>
+        <th>現場名</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @locations.each do |location| %>
+        <% if user_signed_in? && current_user.id == location.user_id %>
+          <tr>
+            <td><%= location.workplace %></td>
+            <td><%= link_to '削除', "/locations/#{location.id}", method: :delete %></td>
+            <td>編集ボタン</td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+  </div>
+</section>
