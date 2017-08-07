@@ -2,16 +2,20 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
+  #アプリケーションクラスのリロードをするかの設定(config.cache_classes)
   config.cache_classes = true
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.
   # Rake tasks automatically ignore this option for performance.
+  #Eager Loadingの設定(config.eager_load)
   config.eager_load = true
 
   # Full error reports are disabled and caching is turned on.
+  #エラー情報をブラウザに表示をするかの設定(config.consider_all_requests_local)
   config.consider_all_requests_local       = false
+  #コントローラのキャッシュ設定をするかの設定(config.action_controller.perform_caching)
   config.action_controller.perform_caching = true
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
@@ -25,15 +29,18 @@ Rails.application.configure do
   config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
   # Compress JavaScripts and CSS.
+  #JavaScriptのコンパイラーの設定(config.assets.js_compressor)
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
+  #ファイルがないときにファイルを探して自動コンパイル(config.assets.compile)
   config.assets.compile = false
 
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
-  config.assets.digest = true
+  #assetにMD5フィンガープリントを使用(config.assets.digest)
+  config.assets.digest = false
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
@@ -46,6 +53,7 @@ Rails.application.configure do
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
+  #ログレベルの指定(config.log_level)
   config.log_level = :debug
 
   # Prepend all log lines with the following tags.
@@ -66,6 +74,7 @@ Rails.application.configure do
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
+
   config.i18n.fallbacks = true
 
   # Send deprecation notices to registered listeners.
@@ -76,4 +85,19 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.action_mailer.default_url_options = { host: 'fudawari.com' }
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :enable_starttls_auto => true,
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :domain => 'smtp.gmail.com',
+    :user_name => ENV["GOOGLE_MAILADDRESS_PRODUCTION"]
+    , #ご自身のgmailアドレス
+    :password => ENV["GOOGLE_PASSWORD_PRODUCTION"]
+    , #ご自身のgmailアドレスのパスワード
+    :authentication => 'login'
+  }
 end

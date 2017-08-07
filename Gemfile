@@ -53,4 +53,5 @@ end
   gem 'js_cookie_rails'
   gem 'rb-readline'
   gem 'dotenv-rails'
+  gem 'touchpunch-rails'
 
