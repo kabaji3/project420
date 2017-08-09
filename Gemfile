@@ -54,4 +54,7 @@ end
   gem 'rb-readline'
   gem 'dotenv-rails'
   gem 'touchpunch-rails'
+group :production do
+  gem 'unicorn'
+end
 

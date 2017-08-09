@@ -94,10 +94,8 @@ Rails.application.configure do
     :address => "smtp.gmail.com",
     :port => 587,
     :domain => 'smtp.gmail.com',
-    :user_name => ENV["GOOGLE_MAILADDRESS_PRODUCTION"]
-    , #ご自身のgmailアドレス
-    :password => ENV["GOOGLE_PASSWORD_PRODUCTION"]
-    , #ご自身のgmailアドレスのパスワード
+    :user_name => ENV["GOOGLE_MAILADDRESS_PRODUCTION"],
+    :password => ENV["GOOGLE_PASSWORD_PRODUCTION"],
     :authentication => 'login'
   }
 end
