@@ -1,13 +1,5 @@
 <section id="list">
-    <p><%= @nickname %>の作業員一覧です</p>
-
-<div class="work-day">
-<%= form_for @users do |f| %>
-    <p>日付:<input id="configuration_date" name="configuration_date" type="text" value="<%= @configuration_date %>">
-    <input name="sort_value" type="hidden" value="<%= @sort_value %>">
-    <input name="user_id" type="hidden" value="<%= @users.id %>"></p>
-<% end %>
-</div>
+    <p><%= @configuration_date %>日  <%= @nickname %>の作業員一覧です</p>
 
     <div class="appositive-list">
       <ul class="al-6 sortable">
@@ -30,7 +22,5 @@
   </section>
   <% end %>
 
-<center>
-<input type="button" value="保存" onClick="save_submit();">
-</center>
+
 

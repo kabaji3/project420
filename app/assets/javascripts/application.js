@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery-ui
+//= require jquery-ui/i18n/datepicker-ja
 //= require jquery_ujs
 //= require turbolinks
 //= require js.cookie

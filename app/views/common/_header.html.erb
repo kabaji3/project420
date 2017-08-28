@@ -15,6 +15,7 @@
             <% if user_signed_in? %>
                 <li><a href="/users/<%= current_user.id %>">マイページ</a></li>
                 <li><%= link_to "会社名の編集", edit_user_path(current_user) %></li>
+                <li><a href="/configuration_dates">配置の一覧</a></li>
                 <li><a href="/members">作業員の一覧</a></li>
                 <li><%= link_to "作業員を追加", new_member_path(current_user) %></li>
                 <li><a href="/locations">作業場所の一覧</a></li>

@@ -1,0 +1,26 @@
+<section class="workplace-list">
+<div class="container">
+  <% if @configuration_list %>
+  <table>
+    <caption>配置日付一覧</caption>
+    <thead>
+      <tr>
+        <th>日付</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @configuration_list.each do |configuration| %>
+        <tr>
+          <td><%= link_to configuration.configuration_date, "/configuration_dates/#{configuration.id}", method: :get %></td>
+          <td><%= link_to '削除', "/configuration_dates/#{configuration.id}", method: :delete %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% else %>
+<caption>配置が登録されていません。</caption>
+  <% end %>
+
+  </div>
+</section>

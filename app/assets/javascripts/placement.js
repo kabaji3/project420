@@ -97,11 +97,24 @@ $("#" + value).appendTo("#" + s_id);
 });
 }
 
-
-
-
-
-
-
+//追加
+$(function() {
+  $('#configuration_date').datepicker();
+  $.datepicker.setDefaults( $.datepicker.regional[ "ja" ] );
+});
 
 });
+
+function save_submit(){
+  if(Cookies.get("sortables")) {
+    var form = document.forms[0];
+    if (form.configuration_date.value == ""){
+      alert("not date");
+      return;
+    }
+    form.sort_value.value = Cookies.get("sortables");
+    form.action = "save";
+    form.method = "POST";
+    form.submit();
+  }
+}
