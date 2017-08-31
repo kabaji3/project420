@@ -25,7 +25,9 @@ Rails.application.configure do
   # config.action_dispatch.rack_cache = true
 
   # Disable serving static files from the `/public` folder by default since
+  #`/ public`フォルダからの静的ファイルの提供をデフォルトで無効にします。
   # Apache or NGINX already handles this.
+  #ApacheまたはNGINXはすでにこれを処理しています。
   config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
   # Compress JavaScripts and CSS.

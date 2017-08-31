@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170617061242) do
+ActiveRecord::Schema.define(version: 20170822162942) do
+
+  create_table "configuration_dates", id: false, force: :cascade do |t|
+    t.integer  "id",                                 limit: 4
+    t.integer  "INTEGER PRIMARY KEY AUTO_INCREMENT", limit: 4
+    t.integer  "user_id",                            limit: 4
+    t.string   "configuration_date",                 limit: 255
+    t.string   "sort_value",                         limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "locations", force: :cascade do |t|
     t.string   "workplace",  limit: 255
