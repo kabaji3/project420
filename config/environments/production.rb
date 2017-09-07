@@ -14,7 +14,7 @@ Rails.application.configure do
 
   # Full error reports are disabled and caching is turned on.
   #エラー情報をブラウザに表示をするかの設定(config.consider_all_requests_local)
-  config.consider_all_requests_local       = false
+  config.consider_all_requests_local = false
   #コントローラのキャッシュ設定をするかの設定(config.action_controller.perform_caching)
   config.action_controller.perform_caching = true
 
@@ -42,7 +42,7 @@ Rails.application.configure do
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
   #assetにMD5フィンガープリントを使用(config.assets.digest)
-  config.assets.digest = false
+  config.assets.digest = true
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
