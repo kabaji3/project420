@@ -5,7 +5,7 @@
 
 
 
-table {
+table .abc{
   width: 320px;
   margin: 0 auto;
   border-collapse: collapse;
@@ -26,7 +26,7 @@ th {
   background-color: #be6;
 }
 
-tr > :first-child {
+tr .abc > :first-child {
   width: 120px;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;

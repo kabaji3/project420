@@ -37,12 +37,12 @@ Rails.application.configure do
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   #ファイルがないときにファイルを探して自動コンパイル(config.assets.compile)
-  config.assets.compile = false
+  config.assets.compile = true
 
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
   #assetにMD5フィンガープリントを使用(config.assets.digest)
-  config.assets.digest = true
+  config.assets.digest = false
   config.assets.debug = true
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
