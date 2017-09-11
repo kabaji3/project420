@@ -43,6 +43,7 @@ Rails.application.configure do
   # yet still be able to expire them through the digest params.
   #assetにMD5フィンガープリントを使用(config.assets.digest)
   config.assets.digest = true
+  config.assets.debug = true
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
