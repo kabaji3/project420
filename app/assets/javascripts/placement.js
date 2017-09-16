@@ -113,8 +113,8 @@ function save_submit(){
       return;
     }
     form.sort_value.value = Cookies.get("sortables");
-    form.action = "save";
-    form.method = "POST";
+
+
     form.submit();
   }
 }

@@ -21,6 +21,9 @@
 
     <%= f.password_field :password_confirmation, autocomplete: 'off', class: "form-registration", placeholder: "パスワード（確認）"  %>
 
+    <%= f.label :group_key, "グループ名（半角英数）" %>
+
+    <%= f.text_field :group_key, class: 'form-registration', placeholder: "グループ名（半角英数）" %>
 
   </fieldset>
 

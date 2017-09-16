@@ -11,16 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170822162942) do
+ActiveRecord::Schema.define(version: 20170915040908) do
 
-  create_table "configuration_dates", id: false, force: :cascade do |t|
-    t.integer  "id",                                 limit: 4
-    t.integer  "INTEGER PRIMARY KEY AUTO_INCREMENT", limit: 4
-    t.integer  "user_id",                            limit: 4
-    t.string   "configuration_date",                 limit: 255
-    t.string   "sort_value",                         limit: 255
+  create_table "configuration_dates", force: :cascade do |t|
+    t.integer  "user_id",            limit: 4
+    t.string   "configuration_date", limit: 255
+    t.string   "sort_value",         limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "group_id",           limit: 4
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.string   "key",        limit: 255
+    t.text     "detail",     limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.string   "name",       limit: 255
   end
 
   create_table "locations", force: :cascade do |t|
@@ -28,13 +35,17 @@ ActiveRecord::Schema.define(version: 20170822162942) do
     t.integer  "user_id",    limit: 4
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.integer  "group_id",   limit: 4
   end
 
   create_table "members", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.integer  "user_id",    limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "name",        limit: 255
+    t.integer  "user_id",     limit: 4
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.integer  "group_id",    limit: 4
+    t.integer  "valid_flg",   limit: 4,   default: 1
+    t.integer  "display_flg", limit: 4,   default: 1
   end
 
   create_table "users", force: :cascade do |t|
@@ -54,7 +65,10 @@ ActiveRecord::Schema.define(version: 20170822162942) do
     t.string   "unconfirmed_email",      limit: 255
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
-    t.string   "company_name",           limit: 255
+    t.string   "name",                   limit: 255
+    t.integer  "group_id",               limit: 4
+    t.integer  "admin_flg",              limit: 4
+    t.integer  "valid_flg",              limit: 4,   default: 1
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

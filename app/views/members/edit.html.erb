@@ -1,7 +1,7 @@
 <div class="edit-name">
-<%= form_for current_user do |f| %>
+<%= form_for @member do |f| %>
 <div class="field">
-    <%= f.label :name, "ユーザ名" %>
+    <%= f.label :name, "作業員名" %>
     <%= f.text_field :name %>
   </div>
 

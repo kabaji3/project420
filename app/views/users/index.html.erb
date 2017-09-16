@@ -1,0 +1,53 @@
+<section class="workplace-list">
+<div class="container">
+<%= form_for current_user do |f| %>
+  <table>
+    <caption>作業員の一覧</caption>
+    <thead>
+      <tr>
+        <th>作業員名</th>
+        <th>有効/無効</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if @users %>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.name %></td>
+          <td>
+          <% if user.valid_flg == 1 %>
+            <%= check_box_tag "user[]",user.id,{:checked => "checked"} %>
+          <% else %>
+            <%= check_box_tag "user[]",user.id %>
+          <% end %>
+          </td>
+          <td></td>
+          <td></td>
+        </tr>
+      <% end %>
+      <% end %>
+      <% if @members %>
+      <% @members.each do |member| %>
+        <tr>
+          <td><%= member.name %></td>
+          <td>
+          <% if member.valid_flg == 1 %>
+            <%= check_box_tag "member[]",member.id,{:checked => "checked"} %>
+          <% else %>
+            <%= check_box_tag "member[]",member.id %>
+          <% end %>
+          </td>
+          <td><%= link_to '編集', "/members/#{member.id.to_s.gsub(/m/,'')}/edit", method: :get %></td>
+          <td><%= link_to '削除', "/members/#{member.id.to_s.gsub(/m/,'')}", method: :delete %></td>
+        </tr>
+      <% end %>
+      <% end %>
+    </tbody>
+    <caption><%= f.submit "更新する" %></caption>
+  </table>
+<input type="hidden" name="valid_update" value="1">
+<% end %>
+  </div>
+</section>

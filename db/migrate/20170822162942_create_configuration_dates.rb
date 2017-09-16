@@ -1,8 +1,7 @@
 class CreateConfigurationDates < ActiveRecord::Migration
   
   def change
-    create_table :configuration_dates, id: false do |t|
-      t.integer  :id, 'INTEGER PRIMARY KEY AUTO_INCREMENT'
+    create_table :configuration_dates do |t|
       t.integer  :user_id
       t.string   :configuration_date
       t.string   :sort_value

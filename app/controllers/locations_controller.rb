@@ -2,7 +2,7 @@ class LocationsController < ApplicationController
   before_action :move_to_index, except: :index
 
   def index
-    @locations = current_user.locations.order ("created_at DESC")
+    @locations = current_user.locations.where(:group_id => current_user.group_id).order ("created_at DESC")
   end
 
   def show
@@ -13,7 +13,7 @@ class LocationsController < ApplicationController
   end
 
   def create
-    Location.create(workplace: location_params[:workplace], user_id: current_user.id)
+    Location.create(workplace: location_params[:workplace], user_id: current_user.id, group_id: current_user.group_id)
   end
 
   def destroy
