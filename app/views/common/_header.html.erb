@@ -31,7 +31,10 @@
                   <% elsif current_user.admin_flg == 0 %>
 
                     <li><%= link_to "ユーザ情報の編集", edit_user_path(current_user) %></li>
-                    <li><a href="/configuration_dates">配置の一覧</a></li>
+
+                    <% if current_user.valid_flg == 1 %>
+                      <li><a href="/configuration_dates">配置の一覧</a></li>
+                    <% end %>
                     <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
 
                   <% end %>
